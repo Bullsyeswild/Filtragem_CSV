@@ -11,5 +11,5 @@ Filtragem de dados usando Python e gerando arquivos CSV
 
 ## Detalhes do projeto
 
-Em parceria com @ , foi realizado a filtragem de dados parar um sistema de pagemntos bancários. Utilizamos Python e a biblioteca Pandas. 
+Em parceria com @LucasB712, @MatheusgVentura e @lalabohm , foi realizado a filtragem de dados para um sistema de pagemntos bancários. Utilizamos Python e a biblioteca Pandas. 
 
