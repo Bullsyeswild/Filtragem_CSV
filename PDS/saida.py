@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 
 # cria arquivo csv
 def criar_arquivo_csv(nome_arquivo, dados):
@@ -31,12 +32,17 @@ for index, linha in dados_csv.iterrows():
     tipo_banco = linha['banco']
 
     if tipo_banco not in bancos:
-        bancos[tipo_banco] = {}
+        bancos[tipo_banco] = {} 
     
     bancos[tipo_banco][colaborador] = salario_com_beneficios
     irpf[colaborador] = irpf_calculado
     inss[colaborador] = inss_calculado
     sindicato[colaborador] = sindicato_calculado
+
+#exclui banco.csv se o arquivo existir, mas não existir o banco em dados_tratados.csv
+for filename in os.listdir('.'):
+    if filename.endswith('.csv') and filename[:-4] not in bancos:
+        os.remove(filename)
 
 for tipo_banco, dados in bancos.items():
     criar_arquivo_csv_bancos(tipo_banco, dados)
