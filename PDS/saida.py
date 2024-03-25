@@ -41,7 +41,7 @@ for index, linha in dados_csv.iterrows():
 
 #exclui banco.csv se o arquivo existir, mas não existir o banco em dados_tratados.csv
 for filename in os.listdir('.'):
-    if filename.endswith('.csv') and filename[:-4] not in bancos:
+    if filename.endswith('.csv') and filename[:-4] not in bancos and filename != 'dados_tratados.csv':
         os.remove(filename)
 
 for tipo_banco, dados in bancos.items():
